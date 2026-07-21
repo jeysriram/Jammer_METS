@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1082</width>
+    <height>930</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>METS Dry Run Simulation</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="0" column="0">
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="handleWidth">
+       <number>5</number>
+      </property>
+      <widget class="QStackedWidget" name="jammer_sim_map">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="dp_aspj_map" name="page_2"/>
+      </widget>
+      <widget class="QStackedWidget" name="stackedWidget">
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="page">
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QTableWidget" name="tbw_updateEmitterDisAngle">
+           <column>
+            <property name="text">
+             <string>ENo</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Lat</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>lon</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Dis(km)</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>DOA</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Heading</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>AOA</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page_3"/>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1082</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionDefault"/>
+   </widget>
+   <widget class="QMenu" name="menuTheme">
+    <property name="title">
+     <string>Theme</string>
+    </property>
+    <addaction name="actionCharcoal"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionLoad_Settings"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTheme"/>
+   <addaction name="menuSettings"/>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_flightDisplay">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>145</width>
+     <height>156</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>MS Shell Dlg 2</family>
+    </font>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
+   </property>
+   <property name="windowTitle">
+    <string>Flight Display</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_8">
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="0" column="0">
+      <widget class="QTabWidget" name="tw_flightDisplay">
+       <property name="tabPosition">
+        <enum>QTabWidget::South</enum>
+       </property>
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="tab">
+        <attribute name="title">
+         <string>Polar Plot - Amp vs DF</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="0">
+          <widget class="dp_rwr_polarplot_power_vs_doa" name="graphicsView"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tab_2">
+        <attribute name="title">
+         <string>Flight Display - Amp vs DF</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="dp_rwr_flight_display" name="graphicsView_2"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_actionLog">
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Action Log</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_10">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QTextBrowser" name="tb_PrintLog"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_InsNavDisp">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>394</width>
+     <height>398</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Nav Display</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_4">
+    <layout class="QGridLayout" name="gridLayout_8">
+     <item row="0" column="0">
+      <widget class="dp_rwr_nav_flight_display" name="obj_gph_vw_INS_GPS_Display"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockWidget_InsNavDispDetails">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <property name="windowTitle">
+    <string>Nav Display Details</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="dp_rwr_ins_gps" name="obj_gph_vw_INS_GPS"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionMap">
+   <property name="icon">
+    <iconset theme="map">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>Map View</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionDataLog">
+   <property name="text">
+    <string>Data Log</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+3</string>
+   </property>
+  </action>
+  <action name="actionStartFlight">
+   <property name="text">
+    <string>▶ Start Flight</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionStopFlight">
+   <property name="text">
+    <string>⏹ Stop Flight</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionResetFlight">
+   <property name="text">
+    <string>↺ Reset Flight</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionDefault">
+   <property name="text">
+    <string> Default Layout</string>
+   </property>
+  </action>
+  <action name="actionCharcoal">
+   <property name="text">
+    <string>Charcoal</string>
+   </property>
+  </action>
+  <action name="actionLoad_Settings">
+   <property name="text">
+    <string>Load Settings</string>
+   </property>
+  </action>
+  <action name="actionLoad_Emitter_Locations">
+   <property name="text">
+    <string>Load Emitter Locations</string>
+   </property>
+  </action>
+  <action name="actionAdjust_Aircraft_Speed">
+   <property name="text">
+    <string>Adjust Aircraft Speed</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>dp_aspj_map</class>
+   <extends>QWidget</extends>
+   <header>dp_aspj_map.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>dp_rwr_polarplot_power_vs_doa</class>
+   <extends>QGraphicsView</extends>
+   <header>dp_rwr_polarplot_power_vs_doa.h</header>
+  </customwidget>
+  <customwidget>
+   <class>dp_rwr_flight_display</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">dp_rwr_flight_display.h</header>
+  </customwidget>
+  <customwidget>
+   <class>dp_rwr_nav_flight_display</class>
+   <extends>QGraphicsView</extends>
+   <header>dp_rwr_nav_flight_display.h</header>
+  </customwidget>
+  <customwidget>
+   <class>dp_rwr_ins_gps</class>
+   <extends>QGraphicsView</extends>
+   <header>dp_rwr_ins_gps.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

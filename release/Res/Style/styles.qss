@@ -1,0 +1,250 @@
+/************************************  QGroupBox *****************************************/
+QGroupBox
+{
+        background-color : qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #A0C0FF, stop: 1 #A9A9D4);
+        border : 2px solid gray;
+        border-radius : 5px;
+        margin-top : 1ex;
+        padding : 5px;
+}
+/*
+QGroupBox::title
+{
+        subcontrol-origin : margin;
+        subcontrol-position : top left;
+        left : 10px;
+        font: 16pt "MS Shell Dlg 2";
+        padding-top : -10px;
+        padding-left : 5px;
+        padding-right : 5px;
+}*/
+/************************************  QScrollArea *******************************************/
+QScrollArea
+{
+        background : #8080a6;
+}
+/************************************  QStackedWidget *******************************************/
+QStackedWidget
+{
+        background : #8080a6;
+}
+/************************************  QComboBox *******************************************/
+QComboBox
+{
+        background : #8080a6;
+}
+
+/************************************  QLabel *******************************************/
+QLabel
+{
+    font: 12pt "MS Shell Dlg 2";
+}
+
+/************************************  QCheckBox *******************************************/
+QCheckBox
+{
+    font: 12pt "MS Shell Dlg 2";
+}
+
+/************************************  QRadioButton *******************************************/
+QRadioButton
+{
+    font: 12pt "MS Shell Dlg 2";
+}
+
+/************************************  QLineEdit *******************************************/
+QLineEdit
+{
+    border : 0.5px solid gray;
+    border-radius : 2px;
+    padding : 0 2px;
+    min-width: 10em;
+    font: 12pt "MS Shell Dlg 2";
+}
+QLineEdit:read-only
+{
+    background : solid white;
+    font: 10pt "MS Shell Dlg 2";
+    color : solid-black;
+}
+QLineEdit
+{
+    background : solid white;
+}
+
+/************************************ QPushButton ****************************************/
+QPushButton
+{
+    border : 2px solid #8f8f91;
+    border-radius : 6px;
+    background-color : qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #A0C0FF, stop: 1 #A0C0FF);
+    min-width : 120px;
+    font: 10pt "MS Shell Dlg 2";
+    padding: 0px 10px 0px 10px;
+}
+
+QPushButton:pressed
+{
+    background-color : qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #7086b2, stop: 1 #7086b2);
+}
+
+QPushButton:flat
+{
+    border : none; /* no border for a flat push button */
+}
+
+QPushButton:default
+{
+    border-color : navy; /* make the default button prominent */
+}
+/************************************* QTableWidget ****************************************/
+QTableWidget
+{
+    background : #8080a6;
+}
+
+/************************************* QTabWidget ****************************************/
+QTabWidget
+{
+    background : #8080a6;
+}
+QTabWidget::pane
+{
+    border : 1px solid black;
+}
+QTabWidget::tab-bar:top
+{
+    top : 1px;
+}
+QTabWidget::tab-bar:bottom
+{
+    bottom : 1px;
+}
+QTabWidget::tab-bar:left
+{
+    right : 1px;
+}
+QTabWidget::tab-bar:right
+{
+    left : 1px;
+}
+QTabBar::tab
+{
+    border : 1px solid black;
+}
+QTabBar::tab:selected
+{
+    background : white;
+}
+QTabBar::tab:!selected
+{
+    background : silver;
+}
+QTabBar::tab:!selected:hover
+{
+    background : #999;
+}
+QTabBar::tab:top:!selected
+{
+    margin-top : 3px;
+}
+QTabBar::tab:bottom:!selected
+{
+    margin-bottom : 3px;
+}
+QTabBar::tab:top, QTabBar::tab:bottom
+{
+    min-width : 8ex;
+    margin-right : -1px;
+    padding : 5px 10px 5px 10px;
+}
+QTabBar::tab:top:selected
+{
+    border-bottom-color : none;
+}
+QTabBar::tab:bottom:selected
+{
+    border-top-color : none;
+}
+QTabBar::tab:top:last, QTabBar::tab:bottom:last, QTabBar::tab:top:only-one, QTabBar::tab:bottom:only-one
+{
+    margin-right : 0;
+}
+QTabBar::tab:left:!selected
+{
+    margin-right : 3px;
+}
+QTabBar::tab:right:!selected
+{
+    margin-left : 3px;
+}
+QTabBar::tab:left, QTabBar::tab:right
+{
+    min-height : 8ex;
+    margin-bottom : -1px;
+    padding : 10px 5px 10px 5px;
+}
+QTabBar::tab:left:selected
+{
+    border-left-color : none;
+}
+QTabBar::tab:right:selected
+{
+    border-right-color : none;
+}
+QTabBar::tab:left:last, QTabBar::tab:right:last, QTabBar::tab:left:only-one, QTabBar::tab:right:only-one
+{
+    margin-bottom : 0;
+}
+/************************************** QTextBrowser ************************************/
+QTextBrowser
+{
+    border : 2px solid gray;
+    border-radius : 5px;
+}
+/************************************** QTreeWidget ************************************/
+QTreeWidget
+{
+    border : 2px #A0A0D0;
+    border-radius : 5px;
+    background : #A0A0D0;
+}
+/************************************** QDockWidget ************************************/
+QDockWidget::title
+{
+    subcontrol-origin : margin;
+    subcontrol-position : top left;
+    text-align: left;
+    background: #A0A0D0;
+}
+QDockWidget::close-button, QDockWidget::float-button
+{
+    border: 1px solid transparent;
+    background: darkgray;
+    padding: 0px;
+}
+QDockWidget::close-button:hover, QDockWidget::float-button:hover
+{
+    background: gray;
+}
+QDockWidget::close-button:pressed, QDockWidget::float-button:pressed
+{
+    padding: 1px -1px -1px 1px;
+}
+/************************************** QMainWindow ************************************/
+QMainWindow::separator
+{
+    background: transparent;
+    width : 3px; /* when vertical */
+    height: 3px; /* when horizontal */
+}
+QMainWindow::separator:hover
+{
+    background: #C8C6C6;
+}
+
+QMainWindow
+{
+    background-color : #A0A0D0
+}
+/***************************************************************************************/

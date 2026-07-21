@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dp_rwr_flight_display</class>
+ <widget class="QWidget" name="dp_rwr_flight_display">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>478</width>
+    <height>531</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_11">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="obj_grp_bx_FlightDispArea">
+     <property name="minimumSize">
+      <size>
+       <width>325</width>
+       <height>325</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="accessibleName">
+      <string>gb_display</string>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="obj_grp_bx_FlightDispConfig">
+     <property name="title">
+      <string>Flight Display Config</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_10">
+      <item row="0" column="0">
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="obj_lbl_StartFreq">
+            <property name="text">
+             <string>Start Frequency :</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="obj_ln_edt_StartFreq"/>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLabel" name="obj_lbl_StopFreq">
+            <property name="text">
+             <string>Stop Frequency :</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLineEdit" name="obj_ln_edt_StopFreq"/>
+          </item>
+          <item row="0" column="4">
+           <widget class="QLabel" name="obj_lbl_Limit">
+            <property name="text">
+             <string>Limit :</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLineEdit" name="obj_ln_edt_Limit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="obj_lbl_StartAngle">
+            <property name="text">
+             <string>Start Angle :</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="obj_ln_edt_StartAngle"/>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="obj_lbl_StopAngle">
+            <property name="text">
+             <string>Stop Angle : </string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLineEdit" name="obj_ln_edt_StopAngle"/>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="obj_psh_btn_PlotSymbol">
+            <property name="text">
+             <string>Plot</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="0">
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="0" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>18</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="1">
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="obj_grp_bx_RotationParam">
+            <property name="title">
+             <string>Rotation Parameters</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_6">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_2">
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="obj_ln_edt_Angle"/>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>o</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="obj_lbl_Degree">
+                 <property name="text">
+                  <string>Degree :</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <widget class="QPushButton" name="obj_psh_btn_StartRotation">
+                 <property name="text">
+                  <string>Start</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QGroupBox" name="obj_grp_bx_GridLineParam">
+            <property name="title">
+             <string>Grid Lines Visible/Invislible</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="0" column="0">
+              <layout class="QGridLayout" name="gridLayout_3">
+               <item row="0" column="2">
+                <widget class="QRadioButton" name="obj_rd_btn_GridLinesInVisible">
+                 <property name="text">
+                  <string>Invisible</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="obj_lbl_GridLines">
+                 <property name="text">
+                  <string>Grid Lines :</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QRadioButton" name="obj_rd_btn_GridLinesVisible">
+                 <property name="text">
+                  <string>Visible</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>18</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

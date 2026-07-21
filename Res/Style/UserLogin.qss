@@ -1,0 +1,57 @@
+/*** Dark Theme ***/
+/* /!\  Do not change the above line since that is used for some runtime purpose. You can also use it if you need it, just mention whether the theme is dark or light /!\ */
+
+QPushButton {
+  background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(39, 68, 104, 255), stop:0.375 rgba(18, 35, 60, 255), stop: 0.835227 rgba(8, 27, 41, 255));
+  color: #FAFBFC;
+  border-radius: 2px;
+  padding: 2px;
+  outline: none;
+  border: none;
+}
+
+QPushButton:disabled {
+  background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(8, 27, 41, 100), stop:0.375 rgba(18, 35, 60, 100), stop: 0.835227 rgba(39, 68, 104, 100));
+  color: #7A7A7A;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QPushButton:checked {
+  background-color: #60798B;
+  border-radius: 4px;
+  padding: 2px;
+  outline: none;
+}
+
+QPushButton:checked:disabled {
+  background-color: #60798B;
+  color: #7A7A7A;
+  border-radius: 4px;
+  padding: 2px;
+  outline: none;
+}
+
+QPushButton:checked:selected {
+  background: #60798B;
+}
+
+QPushButton:hover {
+  background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(8, 27, 41, 255), stop:0.375 rgba(18, 35, 60, 255), stop: 0.835227 rgba(39, 68, 104, 255));
+  color: #FAFBFC;
+}
+
+QPushButton:pressed {
+  background-color: #60798B;
+}
+
+QPushButton:selected {
+  background: #60798B;
+  color: #FAFBFC;
+}
+
+QPushButton::menu-indicator {
+  subcontrol-origin: padding;
+  subcontrol-position: bottom right;
+  bottom: 4px;
+}

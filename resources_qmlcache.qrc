@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<RCC>
+    <qresource prefix="/">
+        <file alias="icons/emitter.png">icons/emitter.png</file>
+        <file alias="icons/Fighter.png">icons/Fighter.png</file>
+        <file alias="icons/EmitterMarker.png">icons/EmitterMarker.png</file>
+        <file alias="icons/app_ew.png">icons/app_ew.png</file>
+    </qresource>
+</RCC>

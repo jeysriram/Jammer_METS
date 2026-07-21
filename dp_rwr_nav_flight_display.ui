@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dp_rwr_nav_flight_display</class>
+ <widget class="QWidget" name="dp_rwr_nav_flight_display">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>384</width>
+    <height>363</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="accessibleName">
+   <string>NAV_Display_Widget</string>
+  </property>
+  <widget class="qfi_EADI" name="obj_gph_vw_NAV_Display">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>384</width>
+     <height>363</height>
+    </rect>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>qfi_EADI</class>
+   <extends>QGraphicsView</extends>
+   <header>NAV_Display_LIB/headers/qfi_EADI.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

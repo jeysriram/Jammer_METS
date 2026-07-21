@@ -1,0 +1,388 @@
+/*
+===============================================================================
+Common Coding Guidelines for All Projects
+===============================================================================
+
+PURPOSE:
+  - Standardize code structure and style across all projects
+  - Serve as a reusable reference document applicable to any C/C++ project
+  - Enable unambiguous, intuitive, and precise code generation
+
+===============================================================================
+1. VARIABLE NAMING CONVENTIONS:
+-------------------------------------------------------------------------------
+Core Naming Format:
+  <scope prefix><datatype prefix><Mnemonic>
+
+Scope Prefixes:
+  - m_ : Member variable
+  - g_ : Global variable
+
+Datatype Prefixes (C++ standard types):
+  - b   : Boolean (e.g., bool bStillGoing)
+  - c   : Character (e.g., char cLetterGrade)
+  - str : C++ String (e.g., string strFirstName)
+  - si  : Short integer (e.g., short siChairs)
+  - i   : Integer (e.g., int iCars)
+  - li  : Long integer (e.g., long liStars)
+  - f   : Floating point (e.g., float fPercent)
+  - d   : Double precision (e.g., double dMiles)
+  - ld  : Long double (e.g., long double ldLightYears)
+  - sz  : Null-terminated string (e.g., char szName[NAME_LEN])
+  - if, is, of, os : File stream and I/O stream prefixes
+  - S, U, C : Struct , Union and Class declarations
+
+Datatype Prefixes (project fixed-width types):
+  When using project-standard fixed-width typedefs, use the following
+  prefixes derived from the type name:
+  - u8   : U8BIT  (e.g., U8BIT  u8Status)
+  - u16  : U16BIT (e.g., U16BIT u16Count)
+  - u32  : U32BIT (e.g., U32BIT u32Timeout)
+  - u64  : U64BIT (e.g., U64BIT u64Timestamp)
+  - s8   : S8BIT  (e.g., S8BIT  s8Offset)
+  - s16  : S16BIT (e.g., S16BIT s16Delta)
+  - s32  : S32BIT (e.g., S32BIT s32Result)
+  - s64  : S64BIT (e.g., S64BIT s64Position)
+  - pu8  : PU8BIT   (e.g., PU8BIT  pu8Buffer)
+  - pu16 : PU16BIT  (e.g., PU16BIT pu16Data)
+  - pu32 : PU32BIT  (e.g., PU32BIT pu32RegMap)
+  - pu64 : PU64BIT  (e.g., PU64BIT pu64Addr)
+  - ps8  : PS8BIT   (e.g., PS8BIT  ps8Name)
+  - ps16 : PS16BIT  (e.g., PS16BIT ps16Samples)
+  - ps32 : PS32BIT  (e.g., PS32BIT ps32ErrorList)
+  - ps64 : PS64BIT  (e.g., PS64BIT ps64Log)
+  - fs   : FSINGLE  (e.g., FSINGLE  fsVoltage)
+  - fd   : FDOUBLE  (e.g., FDOUBLE  fdFrequency)
+  - pfs  : PFSINGLE (e.g., PFSINGLE pfsData)
+  - pfd  : PFDOUBLE (e.g., PFDOUBLE pfdResult)
+  - h    : DRV_HANDLE (e.g., DRV_HANDLE hDevice)
+  - pvp  : PVPTR    (e.g., PVPTR pvpContext)
+
+Additional Modifiers:
+  - u   : Unsigned (e.g., unsigned short usStudents)
+  - k   : Constant parameter (e.g., const long kliGalaxies)
+  - r   : Reference parameter (e.g., long &rliGalaxies)
+  - arr : Array (e.g., U16BIT arru16Samples[MAX_SAMPLES])
+  - p   : Pointer (for non-typedef pointer types, e.g., char *pcGrade)
+  - in_  : Input parameter prefix (e.g., in_pVariable)
+  - out_ : Output parameter prefix (e.g., out_pVariable)
+  - inout_ : Input/output parameter prefix (e.g., inout_pVariable)
+
+Usage Rules:
+  - Avoid multiple variables with similar semantics in one scope
+  - Each variable should have a single, clearly defined purpose
+  - Bit field variables may omit the datatype prefix
+  - Prefer project fixed-width types over raw C types for portability
+  - Variable names must be meaningful and clearly describe the purpose
+      - Do NOT use generic loop variables like i, j, k
+      - Use descriptive names that define the purpose:
+        - Instead of: for (int i = 0; i < count; i++)
+        - Use: for (int iLoop = 0; iLoop < count; iLoop++)
+        - Instead of: for (int i = 0; i < arrSize; i++)
+        - Use: for (int iIdx = 0; iIdx < arrSize; iIdx++)
+
+===============================================================================
+2. FUNCTION NAMING & STRUCTURE:
+-------------------------------------------------------------------------------
+Naming Guidelines:
+  - Function names should start with a verb (e.g., InitNameArray, CloseDialog)
+  - Start the function name with a capital letter
+  - In module-specific cases, prefix with a module identifier if needed
+
+Parameter Guidelines:
+  - Limit functions to a maximum of six parameters
+  - Order parameters with inputs first (prefix "in_") then outputs (prefix "out_")
+  - Use fixed-width types (e.g., U32BIT, S16BIT) for all numeric parameters
+
+Parameter Prefix Definitions:
+  - in_  : Input parameter — read-only by the function (input values are passed in, never modified)
+  - out_ : Output parameter — only written by the function (input values are passed in, and the function overwrites them)
+  - inout_ : Input/output parameter — read AND written by the function (input values are used inside, and the same variable gets updated)
+
+Best Practices:
+  - Every single line of code MUST have a Doxygen comment explaining what it does
+      - Use /// for single-line comments above each line or group of lines
+      - The comment must describe the purpose and effect of that specific line
+      - Do NOT assume the code is self-explanatory
+      - Example:
+            /// Set the file name for the file object
+            file.setFileName(in_pqsFilePath);
+            /// Check if the file was opened successfully
+            if (!file.isOpen())
+            {
+                /// Log the error and return failure
+                LOG_ERROR("read_file", "Failed to open file");
+                return false;
+            }
+  - Always validate pointers at the start of every function
+      - Use validation macro: DP_VALIDATE_POINTER(pVar, "function_name")
+      - If pointer is null, log error and return DP_FAILURE
+  - Initialize local variables before use
+  - Validate parameter ranges and memory allocations
+  - Avoid hardcoded values
+  - Limit nesting (spawning level <= 2)
+  - Return negative error codes (using a defined base) for failure
+  - Functions must have exactly ONE return point at the end
+      - Replace early returns with boolean flag assignments:
+        - Instead of: if (error) return false;
+        - Use: bError = true; ... if (bError) return false;
+  - For global/exported functions, include a driver/module prefix
+  - Use the project-standard STDCALL calling convention macro for exported
+    driver functions on Windows targets
+
+===============================================================================
+3. UI OBJECT NAMING CONVENTIONS:
+-------------------------------------------------------------------------------
+Use consistent prefixes for UI controls:
+  - CheckBox:      Chk  (e.g., ChkReadOnly)
+  - ComboBox:      Cbo  (e.g., CboEnglish)
+  - Button:        Cmd  (e.g., CmdExit)
+  - Dialog:        Dlg
+  - Form:          Frm
+  - Frame:         Fra
+  - HScrollBar:    Hsb
+  - ListBox:       Lst
+  - ListView:      Lvw
+  - Menu:          Mnu
+  - PictureBox:    Pic
+  - ProgressBar:   Prg
+  - Slider:        Sld
+  - Spin:          Spn
+  - StatusBar:     Sta
+  - TextBox:       Txt
+  - ToolBar:       Tlb
+  - TreeView:      Tre
+  - VScrollBar:    Vsb
+
+===============================================================================
+4. DOCUMENTATION REQUIREMENTS:
+-------------------------------------------------------------------------------
+File Header Template (insert at the top of each source file):
+  Use Doxygen-compatible format with the following tags:
+
+  /**
+   * \file   <FileName.h>
+   * \brief  <One-line summary of file purpose>
+   *
+   * <Extended description if needed>
+   *
+   * \version <x.xx>
+   *
+   * \Copyright (C) <Year> Data Patterns (India) Ltd.
+   */
+
+Function Declaration Template (.h files):
+  /**
+   *  \brief      Description of the function
+   *  \param[in]  in_variable1  : short description of the input variable1
+   *  \param[in]  in_variable2  : short description of the input variable2
+   *  \param[out] out_variable1 : short description of the output variable1
+   *  \param[out] out_variable2 : short description of the output variable2
+   *  \return     return value macro
+   *  \author     <Author Name>
+   *  \date       DD-MM-YYYY
+   */
+  short FUNCTION_NAME(in_variable1, in_variable2, out_variable1, out_variable2);
+
+Function Definition Template (.c/.cpp files):
+  - Use the SAME Doxygen format as the .h declaration
+  - Full /** ... */ block with all parameters and return values
+
+Struct/Union Documentation:
+  /*!
+   *   \struct    S_StructureName
+   *   \brief     One-line description
+   *              - Additional description line 1
+   *              - Additional description line 2
+   */
+  typedef struct
+  {
+      datatype member;                             /*!< Description of member */
+  }S_StructureName;
+
+Inline Documentation:
+  - Use "/*!< comment */" for trailing inline documentation of typedefs,
+    struct members, and enum values (Doxygen post-member style)
+  - Example:
+      typedef unsigned int U32BIT;  /*!< unsigned 32 bit datatype */
+
+Include Guard Documentation:
+  - End-of-file include guard closing comment must identify the guard symbol:
+      #endif /*#ifndef _FILENAME_H_*/
+
+===============================================================================
+5. CODE FORMATTING STANDARDS:
+-------------------------------------------------------------------------------
+Structure:
+  - Separate declarations from executable statements with blank lines
+  - Insert blank lines between logical code blocks
+
+Variable Declaration Rules:
+  - ALL variables must be declared at the START of the function body
+  - No variable declarations mixed in with executable statements
+  - Declare variables in semantic groups (booleans, file objects, strings,
+    numbers, structs) before any executable code
+
+Initialization Rules:
+  - ALL variables MUST be initialized at declaration
+      - Structs/Unions: initialized with memset
+          memset(&structVar, 0, sizeof(StructType))
+      - Pointers: initialized to nullptr
+          QLabel *pQLabel = nullptr;
+          /// Zero-initialize the pointer at declaration
+          pQLabel = nullptr;
+      - Containers (QList, QString, etc.): initialized with default constructor
+          QString strTitle;
+      - Booleans: initialized to false
+          bool bResult = false;
+      - Integers: initialized to 0
+          int i = 0;
+      - Doubles: initialized to 0.0
+          double fdXVal = 0.0;
+  - Applies to ALL local variables inside every function — no exceptions
+
+Spacing:
+  - Avoid double line spacing
+  - No spaces after an opening parenthesis or before a closing parenthesis
+  - Always include a space after commas and semicolons
+
+Control Flow:
+  - ALL if statements MUST use braces {}
+      if (condition)
+      {
+          // code
+      }
+  - NO bare "if (...) break;" or "if (...) continue;" — always use braces
+
+Function Braces:
+  - The opening brace '{' must ALWAYS be on a NEW line, not on the same line
+    as the function declaration or control statement
+      // Correct:
+      void function_name(parameters)
+      {
+          // code
+      }
+
+      // Incorrect:
+      void function_name(parameters) {
+          // code
+      }
+
+  - This applies to all constructs: functions, if, while, for, foreach, etc.
+
+===============================================================================
+6. STRUCTURE/UNION DEFINITIONS:
+-------------------------------------------------------------------------------
+Structure/Union Header File Rules:
+  - The header file for structures must ONLY contain struct/union
+    data definitions
+  - NO member functions allowed
+  - NO constructors allowed
+  - Only struct/union declarations with member variables
+  - All utility functions must be in a separate utility header (.h)
+    and implementation file (.c/.cpp)
+  - Unions should contain only data, not member functions
+  - Do not add constructors inside a union type definition
+
+Structure/Union Member Naming Conventions:
+  - Structure and Union member variables MUST use the m_ prefix
+    (e.g., double m_fdX, bool m_bAutoMode)
+  - Structure and Union names must be in FULL CAPS with underscores
+    (e.g., S_DATA_POINT, U_AXIS_RANGE, S_DATA_SERIES)
+
+
+===============================================================================
+7. STANDARD PLATFORM DATA TYPES:
+-------------------------------------------------------------------------------
+All driver and firmware code must use the project-standard fixed-width typedefs
+instead of raw C primitive types. This ensures portability across 32-bit and
+64-bit platforms and both MSVC and GCC toolchains.
+
+Signed Integer Types:
+  S8BIT   -- signed 8-bit   (replaces: signed char / int8_t)
+  S16BIT  -- signed 16-bit  (replaces: short)
+  S32BIT  -- signed 32-bit  (replaces: int)
+  S64BIT  -- signed 64-bit  (replaces: long long / __int64)
+
+Unsigned Integer Types:
+  U8BIT   -- unsigned 8-bit  (replaces: unsigned char / uint8_t)
+  U16BIT  -- unsigned 16-bit (replaces: unsigned short)
+  U32BIT  -- unsigned 32-bit (replaces: unsigned int)
+  U64BIT  -- unsigned 64-bit (replaces: unsigned long long / unsigned __int64)
+
+Pointer Types (use when a typed pointer must be stored as a named type):
+  PS8BIT, PS16BIT, PS32BIT, PS64BIT  -- signed pointer variants
+  PU8BIT, PU16BIT, PU32BIT, PU64BIT  -- unsigned pointer variants
+
+Floating-Point Types:
+  FSINGLE -- float  (single precision)
+  FDOUBLE -- double (double precision)
+  PFSINGLE, PFDOUBLE -- pointer variants
+
+Handle / Void Pointer Types:
+  DRV_HANDLE -- opaque driver handle (void *)
+  PVPTR      -- generic void pointer (void *)
+
+Platform Helper Macros (resolved by the project platform types header):
+  STDCALL           -- calling convention (__stdcall or empty)
+  PRAGMA_PACK_PUSH(n) / PRAGMA_PACK_POP() -- struct alignment control
+  PACK_ATTRIBUTE    -- GCC packed+aligned(1) attribute for structs
+
+Rules:
+  - Always include the project platform types header as the first project
+    include in driver and firmware headers
+  - Do not typedef or redefine these types locally; use the shared header
+    exclusively to avoid duplicate definitions
+  - For 64-bit types, do not assume long long is universally available
+  - Let the platform types header resolve the compiler-specific variant
+
+===============================================================================
+8. ADDITIONAL GUIDELINES FOR CODE QUALITY & AI IMPLEMENTATION:
+-------------------------------------------------------------------------------
+Code Review & Quality Assurance:
+  - Enforce mandatory peer reviews
+  - Integrate automated unit, integration, and regression tests
+  - Use static analysis tools (e.g., ESLint, clang-tidy, SonarQube)
+
+Version Control & Branching Strategy:
+  - Follow a consistent commit message format
+  - Use a branching model (e.g., GitFlow) for development
+
+Exception Handling & Logging:
+  - Implement standardized error codes (negative for errors)
+  - Use try/catch blocks with clear error messages
+  - Set up logging with defined levels (INFO, WARN, ERROR)
+
+Security & Performance:
+  - Validate all inputs; avoid vulnerabilities (e.g., buffer overflows)
+  - Optimize critical paths and profile code to remove bottlenecks
+  - Adhere to data privacy and secure coding practices
+
+CI/CD Integration:
+  - Automate builds, tests, and deployments through CI/CD pipelines
+  - Include automated checks for code quality and security in pipelines
+
+AI-SPECIFIC IMPLEMENTATION:
+  - Ensure proper handling, preprocessing, and validation of training/testing data
+  - Document model training, performance metrics, and explainability efforts
+  - Follow compliance standards for data privacy and security
+
+Architecture & Design Principles:
+  - Use established design patterns (e.g., Singleton, Factory, Observer)
+  - Adhere to SOLID principles for maintainability and scalability
+  - Modularize code for easier testing and reusability
+
+===============================================================================
+9. USAGE NOTES:
+-------------------------------------------------------------------------------
+  - This guideline document should be referenced whenever generating
+    or reviewing code across all projects
+  - The AI should prioritize readability, maintainability, and
+    standardization
+  - When in doubt, default to the guidelines herein and add inline
+    comments to explain decisions made
+
+===============================================================================
+END OF GUIDELINES
+===============================================================================
+*/

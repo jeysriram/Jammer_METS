@@ -1,0 +1,165 @@
+/*** Light Theme ***/
+/* /!\  Do not change the above line since that is used for some runtime purpose. You can also use it if you need it, just mention whether the theme is dark or light /!\ */
+
+QWidget{
+         background-color: rgba(191, 219, 255, 255);
+        /*background-color: qradialgradient(spread:reflect, cx:0.522599, cy:0.523, radius:0.856, fx:0.517, fy:0.523, stop:0 rgba(0, 123, 194, 255), stop:0.284091 rgba(0, 123, 190, 255), stop:0.517045 rgba(0, 118, 182, 255), stop:0.751412 rgba(0, 106, 168, 255), stop:1 rgba(0, 88, 141, 255));*/
+        /*background-color: qradialgradient(spread:reflect, cx:0.522599, cy:0.523, radius:0.856, fx:0.517, fy:0.523, stop:0 rgba(0, 145, 218, 255), stop:0.259887 rgba(0, 134, 206, 255), stop:0.514124 rgba(0, 123, 194, 255), stop:0.751412 rgba(0, 106, 168, 255), stop:1 rgba(0, 88, 141, 255));*/
+}
+
+QStatusBar {
+        border: 1px solid #455364;
+        background: #e1e1e1;
+}
+
+QGroupBox{
+        border: 1px solid #6593cf;
+        border-radius: 9px;
+        margin-top: 0.5em;
+}
+
+QGroupBox[accessibleName = "GB_DISPLAY"]{
+        border: 1px solid #6593cf;
+        border-radius: 9px;
+        margin-top: 0em;
+}
+
+QGroupBox::title{
+        color: #083772;
+        subcontrol-origin: margin;
+        left: 10px;
+        padding: 0 3px 0 3px;
+}
+
+QHeaderView::section {
+        background-color: #bfdbff;
+}
+
+QTreeWidget::item{
+    selection-background-color: #ecc058;
+    selection-color: #000000;
+    border-bottom: 1px dotted grey;
+    border-left: 1px dotted grey;
+}
+
+QTreeWidget{
+        gridline-color: #d8d8d8;
+}
+
+QTreeWidget::item:selected {
+    border: black;
+    border-radius:5px;
+    background-color: rgba(0,128,255,100);
+}
+
+QTreeWidget::item:hover {
+    border: black;
+    border-radius:1px;
+    background-color: rgba(0,128,255,95);
+}
+
+QHeaderView::section {
+        background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:1  rgba(191, 219, 255, 255));
+        border-style: none;
+        border-right: 1px solid #d8d8d8;
+        border-bottom: 1px solid #d8d8d8;
+}
+
+QTableWidget::item{
+    selection-background-color: #fbc84f;
+    selection-color: #0000ff;
+}
+
+QTableWidget{
+        gridline-color: #bfdbd2;
+}
+/*------------------------- Legend -----------------------*/
+QCheckBox[accessibleName = "Legend_CH1"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH1"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #00ff00;
+}
+
+QCheckBox[accessibleName = "Legend_CH2"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH2"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #00ffff;
+}
+
+QCheckBox[accessibleName = "Legend_CH3"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH3"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #bb86fc;
+}
+
+QCheckBox[accessibleName = "Legend_CH4"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH4"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #ced64f;
+}
+
+QCheckBox[accessibleName = "Legend_CH5"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH5"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #ff6464;
+}
+
+QCheckBox[accessibleName = "Legend_CH6"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH6"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #26ffa8;
+}
+
+QCheckBox[accessibleName = "Legend_CH7"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH7"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #1e90ff;
+}
+
+QCheckBox[accessibleName = "Legend_CH8"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH8"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #ff69b4;
+}
+
+

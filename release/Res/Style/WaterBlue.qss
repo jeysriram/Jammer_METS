@@ -1,0 +1,289 @@
+/*** Light Theme ***/
+/* /!\  Do not change the above line since that is used for some runtime purpose. You can also use it if you need it, just mention whether the theme is dark or light /!\ */
+
+QWidget, QDialog, QMenu {
+        background-color: qconicalgradient(cx:0.5, cy:0.5, angle:181.3, stop:0 rgba(35, 112, 164, 255), stop:0.255682 rgba(15, 125, 200, 255), stop:0.414773 rgba(0, 131, 219, 255), stop:0.579545 rgba(15, 125, 200, 255), stop:1 rgba(35, 112, 164, 255));
+}
+
+QPushButton{
+        border-style: outset;
+        border-width: 2px;
+        border-top-color: qlineargradient(spread:pad, x1:0.5, y1:0.6, x2:0.5, y2:0.4, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+        border-right-color: qlineargradient(spread:pad, x1:0.4, y1:0.5, x2:0.6, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+        border-left-color: qlineargradient(spread:pad, x1:0.6, y1:0.5, x2:0.4, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+        border-bottom-color: rgb(58, 58, 58);
+        border-bottom-width: 1px;
+        border-style: solid;
+        color: rgb(255, 255, 255);
+        padding: 2px;
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(15, 125, 200, 255), stop:1 rgba(35, 112, 164, 255));
+}
+
+QPushButton:pressed{
+        border-style: outset;
+        border-width: 2px;
+        border-top-color: qlineargradient(spread:pad, x1:0.5, y1:0.6, x2:0.5, y2:0.4, stop:0 rgba(62, 62, 62, 255), stop:1 rgba(22, 22, 22, 255));
+        border-right-color: qlineargradient(spread:pad, x1:0.4, y1:0.5, x2:0.6, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+        border-left-color: qlineargradient(spread:pad, x1:0.6, y1:0.5, x2:0.4, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+        border-bottom-color: rgb(58, 58, 58);
+        border-bottom-width: 1px;
+        border-style: solid;
+        color: rgb(255, 255, 255);
+        padding: 2px;
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(15, 125, 200, 255), stop:1 rgba(35, 112, 164, 255));
+}
+
+QPushButton:hover:!pressed {
+        border-style: outset;
+        border-width: 2px;
+        border-top-color: qlineargradient(spread:pad, x1:0.5, y1:0.6, x2:0.5, y2:0.4, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(110, 110, 110, 255));
+        border-right-color: qlineargradient(spread:pad, x1:0.4, y1:0.5, x2:0.6, y2:0.5, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(110, 110, 110, 255));
+        border-left-color: qlineargradient(spread:pad, x1:0.6, y1:0.5, x2:0.4, y2:0.5, stop:0 rgba(180, 180, 180, 255), stop:1 rgba(110, 110, 110, 255));
+        border-bottom-color: rgb(115, 115, 115);
+        border-bottom-width: 1px;
+        border-style: solid;
+        color: rgb(255, 255, 255);
+        padding: 2px;
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(0, 131, 219, 255), stop:1 rgba(35, 112, 164, 255));
+}
+
+QPushButton:disabled{
+        border-style: outset;
+        border-width: 2px;
+        border-top-color: qlineargradient(spread:pad, x1:0.5, y1:0.6, x2:0.5, y2:0.4, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+        border-right-color: qlineargradient(spread:pad, x1:0.4, y1:0.5, x2:0.6, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+        border-left-color: qlineargradient(spread:pad, x1:0.6, y1:0.5, x2:0.4, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+        border-bottom-color: rgb(58, 58, 58);
+        border-bottom-width: 1px;
+        border-style: solid;
+        color: rgb(0, 0, 0);
+        padding: 2px;
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(0, 131, 219, 255), stop:1 rgba(15, 125, 200, 255));
+}
+
+QPushButton[accessibleName="Spectra_Icons"]:checked {
+  background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(15, 125, 200, 255), stop:1 rgba(35, 112, 164, 255));
+  border-style: outset;
+  border-width: 2px;
+  border-top-color: qlineargradient(spread:pad, x1:0.5, y1:0.6, x2:0.5, y2:0.4, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+  border-right-color: qlineargradient(spread:pad, x1:0.4, y1:0.5, x2:0.6, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+  border-left-color: qlineargradient(spread:pad, x1:0.6, y1:0.5, x2:0.4, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+  border-bottom-color: rgb(58, 58, 58);
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QPushButton[accessibleName="Spectra_Icons"]:!checked {
+  background-color: transparent;
+  border-style: outset;
+  border-width: 2px;
+  border-top-color: qlineargradient(spread:pad, x1:0.5, y1:0.6, x2:0.5, y2:0.4, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+  border-right-color: qlineargradient(spread:pad, x1:0.4, y1:0.5, x2:0.6, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+  border-left-color: qlineargradient(spread:pad, x1:0.6, y1:0.5, x2:0.4, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(62, 62, 62, 255));
+  border-bottom-color: rgb(58, 58, 58);
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 2px;
+}
+
+QLineEdit {
+        border-width: 1px; border-radius: 4px;
+        border-color: rgb(58, 58, 58);
+        border-style: inset;
+        padding: 0 8px;
+        color: rgb(255, 255, 255);
+        background:rgb(100, 100, 100);
+        selection-background-color: rgb(255, 255, 255);
+        selection-color: rgb(60, 63, 65);
+}
+
+QLabel {
+        color:rgb(255,255,255);
+}
+
+QTabWidget {
+        color:rgb(0,0,0);
+        background-color:rgb(247,246,246);
+}
+
+QTabWidget::pane {
+                border-color: rgb(77,77,77);
+                background-color:rgb(15, 125, 200);
+                border-style: solid;
+                border-width: 1px;
+        border-radius: 6px;
+}
+
+QTabBar::tab {
+        padding:2px;
+        color:rgb(250,250,250);
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(15, 125, 200, 255), stop:1 rgba(35, 112, 164, 255));
+        border-style: solid;
+        border-width: 2px;
+        border-top-right-radius:4px;
+        border-top-left-radius:4px;
+        border-top-color: qlineargradient(spread:pad, x1:0.5, y1:0.6, x2:0.5, y2:0.4, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(95, 92, 93, 255));
+        border-right-color: qlineargradient(spread:pad, x1:0.4, y1:0.5, x2:0.6, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(95, 92, 93, 255));
+        border-left-color: qlineargradient(spread:pad, x1:0.6, y1:0.5, x2:0.4, y2:0.5, stop:0 rgba(115, 115, 115, 255), stop:1 rgba(95, 92, 93, 255));
+        border-bottom-color: rgb(101,101,101);
+}
+
+QTabBar::tab:selected, QTabBar::tab:last:selected, QTabBar::tab:hover {
+        background-color:rgb(15, 125, 200);
+        margin-left: 0px;
+        margin-right: 1px;
+}
+
+QTabBar::tab:!selected {
+        margin-top: 1px;
+                margin-right: 1px;
+}
+
+QGroupBox, QRadioButton {
+        color:rgb(255,255,255);
+}
+
+QCheckBox [accessibleName="CB_H"]{
+        color:rgb(223,219,210);
+        padding: 2px;
+}
+
+QCheckBox:hover {
+        border-radius:4px;
+        border-style:solid;
+        padding-left: 1px;
+        padding-right: 1px;
+        padding-bottom: 1px;
+        padding-top: 1px;
+        border-width:1px;
+        border-color: rgb(87, 97, 106);
+        background-color:qlineargradient(spread:pad, x1:0.5, y1:0.7, x2:0.5, y2:0.3, stop:0 rgba(87, 97, 106, 150), stop:1 rgba(93, 103, 113, 150));
+}
+
+QCheckBox::indicator:checked {
+        border-radius:4px;
+        border-style:solid;
+        border-width:1px;
+        border-color: rgb(180,180,180);
+        background-color:qlineargradient(spread:pad, x1:0.5, y1:0.7, x2:0.5, y2:0.3, stop:0 rgba(87, 97, 106, 255), stop:1 rgba(93, 103, 113, 255));
+}
+
+QCheckBox::indicator:unchecked {
+        border-radius:4px;
+        border-style:solid;
+        border-width:1px;
+        border-color: rgb(87, 97, 106);
+        background-color:rgb(255,255,255);
+}
+
+QComboBox {
+        color:rgb(81,72,65);
+        background: rgb(255,255,255);
+}
+
+QComboBox:editable {
+        selection-color:rgb(81,72,65);
+        selection-background-color: rgb(255,255,255);
+}
+
+QComboBox QAbstractItemView {
+        selection-color: rgb(255,255,255);
+        selection-background-color: rgb(246, 134, 86);
+}
+
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+        color:  #1e1d23;
+}
+/*------------------------- Legend -----------------------*/
+QCheckBox[accessibleName = "Legend_CH1"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH1"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #00ff00;
+}
+
+QCheckBox[accessibleName = "Legend_CH2"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH2"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #00ffff;
+}
+
+QCheckBox[accessibleName = "Legend_CH3"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH3"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #bb86fc;
+}
+
+QCheckBox[accessibleName = "Legend_CH4"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH4"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #ced64f;
+}
+
+QCheckBox[accessibleName = "Legend_CH5"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH5"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #ff6464;
+}
+
+QCheckBox[accessibleName = "Legend_CH6"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH6"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #26ffa8;
+}
+
+QCheckBox[accessibleName = "Legend_CH7"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH7"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #1e90ff;
+}
+
+QCheckBox[accessibleName = "Legend_CH8"]::indicator:unchecked {
+image: none;
+border: 1px solid #19232D;
+}
+
+QCheckBox[accessibleName = "Legend_CH8"]::indicator:checked {
+image: none;
+border: 1px solid #19232D;
+background-color: #ff69b4;
+}
+
+
