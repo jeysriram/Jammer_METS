@@ -34,7 +34,7 @@ class dp_aspj_map;
  *  \brief      Reads the startup waypoint/emitter CSV paths from the input
  *              config file (Inputs/DP_InputFiles.ini). Missing file or keys
  *              fall back to the Tamil Nadu defaults, and the config file is
- *              (re)written so it always exists for the user to edit — change
+ *              (re)written so it always exists for the user to edit ï¿½ change
  *              the paths in it and the next startup loads those CSVs instead.
  *  \param[out] out_qsWaypointsCsv : Waypoints CSV path to load on startup.
  *  \param[out] out_qsEmittersCsv  : Emitters CSV path to load on startup.
@@ -70,7 +70,7 @@ public:
      */
     explicit dp_aspj_map(QWidget *parent = nullptr);
     /**
-     *  \brief      Destructor — releases the generated UI object.
+     *  \brief      Destructor ï¿½ releases the generated UI object.
      *  \author     Sriram J
      *  \date       03 July 2026
      */
@@ -122,6 +122,7 @@ private:
     Ui::dp_aspj_map *m_pUi;                     /*!< Generated UI object for this widget */
 
     QQuickWidget    *m_mapWidget = nullptr;     /*!< QQuickWidget hosting the QML map view */
+    CDP_ScenarioFlightModel *m_pScenarioFlightModel = nullptr; /*!< Background/scenario multi-flight traffic model */
 
     QToolBar        *m_emitterToolBar = nullptr;/*!< Top toolbar for emitter control */
     bool             m_bFullScreen = false;    /*!< True while the map is maximised inside the window */

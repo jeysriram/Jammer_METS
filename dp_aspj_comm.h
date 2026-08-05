@@ -9,6 +9,7 @@
 
 #include "dp_aspj_emitter_component.h"
 #include "dp_aspj_flight_component.h"
+#include "dp_aspj_scenario_flight_component.h"
 #include "dp_aspj_map.h"
 #include "dp_rwr_polarplot_power_vs_doa.h"
 #include "dp_symbol_draw_polar_plot.h"

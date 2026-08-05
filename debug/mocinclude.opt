@@ -1,7 +1,7 @@
 -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/win32-g++
--IC:/Users/SRIRAM JAY/Desktop/Personal/Projects/Sriram_2568/July_17/METS_DryRunSimulation
--IC:/Users/SRIRAM JAY/Desktop/Personal/Projects/Sriram_2568/July_17/METS_DryRunSimulation/LFLIB
--IC:/Users/SRIRAM JAY/Desktop/Personal/Projects/Sriram_2568/July_17/METS_DryRunSimulation/NAV_Display_LIB/headers
+-IC:/Users/SRIRAM JAY/OneDrive/Desktop/Personal/Projects/Sriram_2568/CWD/METS_DryRunSimulation
+-IC:/Users/SRIRAM JAY/OneDrive/Desktop/Personal/Projects/Sriram_2568/CWD/METS_DryRunSimulation/LFLIB
+-IC:/Users/SRIRAM JAY/OneDrive/Desktop/Personal/Projects/Sriram_2568/CWD/METS_DryRunSimulation/NAV_Display_LIB/headers
 -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include
 -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtPrintSupport
 -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtSvg

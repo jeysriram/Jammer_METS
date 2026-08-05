@@ -337,6 +337,14 @@ Rectangle {
         gesture.onPinchStarted: root._userInteracted = true
 
         // --------------------------------------------------------
+        // LAYER 0: BACKGROUND SCENARIO TRAFFIC — ambient aircraft flying their
+        // own spline-interpolated routes around the primary flight path (see
+        // CDP_ScenarioFlightModel / ScenarioFlightsLayer.qml). Only the moving
+        // icons are shown; their waypoints/paths are never exposed to QML.
+        // --------------------------------------------------------
+        ScenarioFlightsLayer { }
+
+        // --------------------------------------------------------
         // LAYER 1: EMITTER MARKERS
         // --------------------------------------------------------
         MapItemView {

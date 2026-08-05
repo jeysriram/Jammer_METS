@@ -32,6 +32,7 @@ SOURCES += \
     dp_aspj_flight_component.cpp \
     dp_aspj_loadsettings.cpp \
     dp_aspj_map.cpp \
+    dp_aspj_scenario_flight_component.cpp \
     dp_rwr_flight_display.cpp \
     dp_rwr_flight_display_draw_functions.cpp \
     dp_rwr_ins_gps.cpp \
@@ -56,6 +57,7 @@ HEADERS += \
     dp_aspj_loadsettings.h \
     dp_aspj_macros.h \
     dp_aspj_map.h \
+    dp_aspj_scenario_flight_component.h \
     dp_aspj_structures.h \
     dp_rwr_flight_display.h \
     dp_rwr_ins_gps.h \

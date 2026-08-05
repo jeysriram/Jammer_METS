@@ -34,6 +34,10 @@ static const char DP_K_CFG_KEY_WAYPOINTS[]   = "InputFiles/WaypointsCsv";
 static const char DP_K_CFG_KEY_EMITTERS[]    = "InputFiles/EmittersCsv";
 static const char DP_K_DEFAULT_WAYPOINTS[]   = "Inputs/Waypoints_TamilNadu.csv";
 static const char DP_K_DEFAULT_EMITTERS[]    = "Inputs/Emitters_TamilNadu.csv";
+/// - Background/scenario multi-flight traffic: fixed default CSV (not user
+///   configurable via the input-config ini, unlike the primary waypoints/
+///   emitters files above — this is ambient map traffic, not simulation input)
+static const char DP_K_DEFAULT_SCENARIO_FLIGHTS[] = "Inputs/MultiFlight_TamilNadu.csv";
 
 /*!
  *  \fn     static QString DP_GetInputCfgFilePath()
@@ -192,6 +196,9 @@ dp_aspj_map::dp_aspj_map(QWidget *parent) :
 {
     /// - Build the widget from the generated UI
     m_pUi->setupUi(this);
+    /// - Create the background/scenario multi-flight traffic model (self-contained,
+    ///   only wired to QML below — see CDP_ScenarioFlightModel)
+    m_pScenarioFlightModel = new CDP_ScenarioFlightModel(this);
 }
 
 /*!
@@ -306,6 +313,7 @@ void dp_aspj_map::setupQmlContext()
         /// - Expose the C++ models and this widget to QML as context properties
         m_mapWidget->engine()->rootContext()->setContextProperty("emitterModel",  g_SDP_ASPJ_Handle.pm_cobj_emitterModel);
         m_mapWidget->engine()->rootContext()->setContextProperty("flightController", g_SDP_ASPJ_Handle.pm_cobj_flightController);
+        m_mapWidget->engine()->rootContext()->setContextProperty("scenarioFlightModel", m_pScenarioFlightModel);
         m_mapWidget->engine()->rootContext()->setContextProperty("dpAspjMap", this);
 
         /// - Bridge the compile-time map source selection (DP_USE_ONLINE_MAP) to QML
@@ -318,6 +326,11 @@ void dp_aspj_map::setupQmlContext()
         /// - Load the QML map view and add the widget to the map layout
         m_mapWidget->setSource(QUrl("qrc:/qml/MapView.qml"));
         m_pUi->dp_aspj_flightmap->addWidget(m_mapWidget);
+
+        /// - Auto-load and start the background/scenario flight traffic (fixed
+        ///   default CSV — flies immediately, independent of the primary
+        ///   waypoints/emitters auto-load below)
+        m_pScenarioFlightModel->loadScenarioFlightsFromCSV(DP_ResolveInputPath(DP_K_DEFAULT_SCENARIO_FLIGHTS));
     }
 }
 /*!

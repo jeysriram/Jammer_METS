@@ -2,6 +2,9 @@
     <qresource prefix="/">
         <file>qml/MapView.qml</file>
         <file>qml/AircraftItem.qml</file>
+        <file>qml/ScenarioFlightsLayer.qml</file>
+        <file>qml/ScenarioFlightPathsLayer.qml</file>
+        <file>qml/ScenarioAircraftIcon.qml</file>
         <file>qml/EmitterRangeRings.qml</file>
         <file>qml/MapToolbar.qml</file>
         <file>qml/RWRingsCanvas.qml</file>
